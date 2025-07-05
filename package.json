@@ -1,0 +1,19 @@
+{
+  "name": "pigon",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.12.3",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"pnpm -w frontend dev\" \"pnpm -w backend dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "dotenv": "^17.0.1",
+    "nodemon": "^3.1.10",
+    "typescript": "^5.8.3"
+  }
+}
