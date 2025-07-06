@@ -1,15 +1,16 @@
 import "dotenv/config";
-import express from "express";
 
-import { Request, Response } from "express";
+import express from "express";
+import cookieParser from "cookie-parser";
+
+import authRoutes from "./routes/auth.route";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cookieParser());
 
-app.get("/", (_req: Request, res: Response) => {
-  res.send("Hello World!");
-});
+app.use("/api/auth", authRoutes);
 
 app.listen(port, () => console.log(`Server is running on port: ${port}`));
